@@ -1,6 +1,6 @@
 # Rands.js
 
-Rands.js provides methods to generate pseudorandom numbers from various distributions. The methods can output a single random value, or an array of random values. Rands.js can be used in conjunction with a seeded random number generator (RNG) to produce a repeatable sequence of random values.
+Rands.js provides methods to generate pseudorandom numbers from various distributions (e.g., uniform, Gaussian, Poisson, binomial, etc.). Rands.js can be used in conjunction with a seeded random number generator (RNG) to produce repeatable sequences of random values.
 
 ## Installation
 
@@ -105,8 +105,8 @@ This is demonstrated in following example using David Bau's seedrandom.js packag
     var Rands = require('rands');
     var seedrandom = require('seedrandom');
 
-    var rng = seedrandom('charlotte');
-    var r = new Rands(rng);
+    var rngFunc = seedrandom('charlotte');
+    var r = new Rands(rngFunc);
 
     console.log(r.uniform());
 
