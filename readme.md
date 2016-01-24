@@ -1,6 +1,6 @@
 # Rands.js
 
-Rands.js produces random variables from a variety of
+Rands.js provides methods to generate pseudorandom numbers from various distributions. The methods can output a single random value, or an array of random values. Rands.js can be used in conjunction with a seeded random number generator (RNG) to produce a repeatable sequence of random values.
 
 ## Installation
 
@@ -8,14 +8,14 @@ Rands.js produces random variables from a variety of
 
     npm install rands
 
-And in your code:
+In your code:
 
     var Rands = require('rands');
     var r = new Rands();
 
 ### Directly in the browser
 
-The `rands.min.js` script exposes the window.Rands global variable:
+While a tool like Webpack or Browserify is recommended for use in the browser, the `rands.min.js` script is also provided, which exposes the window.Rands global variable:
 
     <script src="path/to/rands.min.js"></script>
     <script>
@@ -25,9 +25,9 @@ The `rands.min.js` script exposes the window.Rands global variable:
 
 ## Random distributions
 
-The library provides the following functions to generate a variety of random variables.
+The library provides methods to generate values from the following distributions.
 
-In each case, the last argument `length`  is optional. When included, the function returns an array of random variables of length `length`. When omitted, the function returns a single non-array value.
+In each case, the final argument `length`  is optional. When included, the function returns an array of random variables of length `length`. When omitted, the function returns a single numeric value.
 
 #### Bernoulli
 
@@ -81,6 +81,8 @@ Generate uniform random variable(s) in range [`min`, `max`), where `min`=0 and
 
 ## Utility functions
 
+A few static methods are provided:
+
 #### Mean
 
 Compute the mean of the numbers contained in in array `a`:
@@ -95,16 +97,16 @@ Compute the variance of the numbers contained in array `a`:
 
 ## Generating a repeatable sequence of random variables using a seeded random number generator function
 
-The Rands constructor accepts a uniform random number generator function as an optional argument. By providing
+The Rands([rngFunc]) constructor accepts a uniform random number generator function as an optional argument. By providing
 a seeded RNG function, your code can generate the same sequence of pseudorandom numbers every time it runs.
 
 This is demonstrated in following example using David Bau's seedrandom.js package. The script will print the same number to the console every time it runs:
 
-    var Randlib = require('randlib');
+    var Rands = require('rands');
     var seedrandom = require('seedrandom');
 
     var rng = seedrandom('charlotte');
-    var r = new Randlib(rng);
+    var r = new Rands(rng);
 
     console.log(r.uniform());
 
