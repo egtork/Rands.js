@@ -1,7 +1,11 @@
 {
   "name": "Rands",
   "version": "1.0.0",
-  "description": "A JavaScript library for generating random variables",
+  "description": "A JavaScript library for generating pseudorandom numbers",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/egtork/Rands.js.git"
+  },
   "main": "lib/rands.js",
   "devDependencies": {
     "babel-cli": "^6.3.17",
@@ -23,5 +27,5 @@
     "test": "mocha"
   },
   "author": "EGTork",
-  "license": "ISC"
+  "license": "MIT"
 }
