@@ -1,5 +1,5 @@
 {
-  "name": "Rands",
+  "name": "rands",
   "version": "1.0.0",
   "description": "A JavaScript library for generating pseudorandom numbers",
   "repository" : {
